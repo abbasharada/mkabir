@@ -1,5 +1,5 @@
 import './globals.css';
-import Features from '../components/features';
+import Features from '@/app/components/features';
 
 export default function Home() {
   return (
