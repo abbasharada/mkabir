@@ -1,4 +1,4 @@
-import './globals.css';
+import '../styles/globals.css';
 import Features from '@/app/components/features';
 
 export default function Home() {
