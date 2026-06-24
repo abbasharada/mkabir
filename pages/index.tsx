@@ -1,12 +1,9 @@
-import Footer from "../components/Footer";
-import "../styles/footer.css";
+import Footer from "../app/components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <main className="flex-1 flex flex-col items-center justify-center px-6 text-center">
-      </main>
-
+    <div>
+      
       <Footer />
     </div>
   );
