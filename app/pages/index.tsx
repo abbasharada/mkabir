@@ -1,5 +1,5 @@
-import Footer from "../app/components/Footer";
-import '../app/globals.css';
+import Footer from "../components/Footer";
+import '../globals.css';
 
 export default function Home() {
   return (
