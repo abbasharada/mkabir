@@ -1,4 +1,3 @@
-import "./NavbarHero.css";
 
 export default function NavbarHero() {
   return (
