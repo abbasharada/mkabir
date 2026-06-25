@@ -1,11 +1,13 @@
-import Footer from "../components/Footer";
-import '../globals.css';
+import '../styles/globals.css';
+import Features from '@/app/components/features';
+import Footer from '../components/Footer';
 
 export default function Home() {
   return (
-    <div>
-      
+    <main style={{ minHeight: '100vh' }}>
+      <Features />
+
       <Footer />
-    </div>
+    </main>
   );
 }
