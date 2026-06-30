@@ -1,57 +1,95 @@
+import { useState } from "react";
 import FAQItem from "./FAQItem";
-import "../styles/faq.css";
 
 const faqs = [
   {
-    question: "What services do you offer?",
+    question: "How can I track my shipment?",
     answer:
-      "We provide modern web development solutions including responsive websites and web applications.",
+      "You can track your shipment using the tracking number provided after booking. Enter the tracking ID on the Track Shipment page to view its current status.",
   },
   {
-    question: "How can I contact your team?",
+    question: "How long does delivery take?",
     answer:
-      "You can reach us through the Contact page or any of our official social media platforms.",
+      "Delivery times depend on the destination and shipping option selected. Standard deliveries typically take 2–5 business days, while express deliveries are faster.",
   },
   {
-    question: "Do you build responsive websites?",
+    question: "What items are prohibited from shipping?",
     answer:
-      "Yes. Every page is designed to work seamlessly across desktop, tablet, and mobile devices.",
+      "Hazardous materials, illegal goods, explosives, flammable substances, and other restricted items cannot be shipped through FastBox.",
   },
   {
-    question: "Can I request a custom project?",
+    question: "Can I change my delivery address after shipping?",
     answer:
-      "Absolutely. We develop custom solutions based on your specific requirements.",
+      "Yes, address changes may be possible before the shipment reaches the final delivery stage. Contact our support team as soon as possible.",
   },
   {
-    question: "How long does a project take?",
+    question: "Do you offer international shipping?",
     answer:
-      "Project duration depends on complexity, but timelines are discussed before development begins.",
+      "Yes. FastBox provides international shipping services to selected countries. Delivery times and costs vary depending on the destination.",
   },
   {
-    question: "Do you provide support after delivery?",
+    question: "How do I contact customer support?",
     answer:
-      "Yes. We offer post-delivery support and maintenance where applicable.",
+      "You can reach our customer support team through the Contact page, email, or phone during business hours.",
   },
 ];
 
 export default function FAQ() {
+  const [search, setSearch] = useState("");
+
+  const filteredFAQs = faqs.filter(
+    (faq) =>
+      faq.question.toLowerCase().includes(search.toLowerCase()) ||
+      faq.answer.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <section className="faq-container">
       <div className="faq-header">
         <h1>Frequently Asked Questions</h1>
+
         <p>
-          Find answers to some of the most common questions about our services.
+          Find answers to common questions about FastBox logistics and
+          delivery services.
         </p>
+
+        <input
+          type="text"
+          placeholder="Search questions..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="faq-search"
+        />
       </div>
 
       <div className="faq-list">
-        {faqs.map((faq, index) => (
-          <FAQItem
-            key={index}
-            question={faq.question}
-            answer={faq.answer}
-          />
-        ))}
+        {filteredFAQs.length > 0 ? (
+          filteredFAQs.map((faq, index) => (
+            <FAQItem
+              key={index}
+              question={faq.question}
+              answer={faq.answer}
+            />
+          ))
+        ) : (
+          <p className="no-results">
+            No matching questions found.
+          </p>
+        )}
+      </div>
+
+      <div className="faq-contact">
+        <h2>Need help with your shipment?</h2>
+
+        <p>
+          Our logistics specialists are available to help with parcel
+          tracking, delivery schedules, shipping costs, and any other
+          questions you may have.
+        </p>
+
+        <a href="/contact" className="contact-btn">
+          Contact FastBox Support
+        </a>
       </div>
     </section>
   );
