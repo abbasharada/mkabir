@@ -1,6 +1,4 @@
 import NavbarHero from "../components/NavbarHero";
-
-// import '../styles/globals.css';
 import Features from '../components/features';
 import Footer from '../components/Footer';
 
