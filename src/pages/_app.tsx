@@ -3,7 +3,7 @@ import "../styles/globals.css"
 import { Layout } from "../components/layout";
 import "../styles/footer.css";
 import "../styles/NavbarHero.css";
-
+import "../styles/contact.css";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (

@@ -1,4 +1,4 @@
-
+import Link from "next/link";
 export default function NavbarHero() {
   return (
     <>
@@ -7,13 +7,27 @@ export default function NavbarHero() {
           Fast<span>Box</span>
         </div>
 
-        <ul className="nav-links">
-          <li>Home</li>
-          <li>Services</li>
-          <li>Tracking</li>
-          <li>About</li>
-          <li>Contact</li>
-        </ul>
+          <ul className="nav-links">
+  <li>
+    <Link href="/">Home</Link>
+  </li>
+
+  <li>Services</li>
+
+  <li>Tracking</li>
+
+  <li>
+    <Link href="/about">About</Link>
+  </li>
+
+  <li>
+    <Link href="/contact">Contact</Link>
+  </li>
+
+  <li>
+    <Link href="/faq">FAQ</Link>
+  </li>
+</ul>
 
         <button className="quote-btn">Get a Quote</button>
       </nav>
